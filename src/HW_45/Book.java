@@ -38,5 +38,8 @@ public class Book {
         return new Book(author, title, numberPages);
     }
 
-
+    @Override
+    public String toString() {
+        return author + " " + title + ": " + numberPages + "p.";
+    }
 }
