@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String author;
 
     private String title;
@@ -41,5 +41,15 @@ public class Book {
     @Override
     public String toString() {
         return author + " " + title + ": " + numberPages + "p.";
+    }
+
+
+    @Override
+    public int compareTo(Book other) {
+        if(this.author.equals(other.author)) {
+            return title.compareTo(other.title);
+        }
+
+        return author.compareTo(other.author);
     }
 }
